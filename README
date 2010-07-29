@@ -1,0 +1,13 @@
+README for CitizenReporter for TapLynx plugin
+
+The idea for CitizenReporter came at the end of 2009 and our
+first version of the plugin is outlined in this blog post
+
+http://blog.tyreeapps.com/2010/01/citizen-reporter-plug-in-for-taplynx.html
+
+As with any programming project, we've gotten better so
+the code needs to be reworked every few months.
+
+TODO:
+let people configure the plugin via the NGConfig.plst
+stub out posting data to a webpage rather than with email

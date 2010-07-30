@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Sample Entries</key>
+	<dict>
+		<key>Title</key>
+		<string>Report</string>
+		<key>ShortTitle</key>
+		<string>Report</string>
+		<key>TabImageName</key>
+		<string>tab_placeholder.png</string>
+		<key>customViewControllerClass</key>
+		<string>CitizenReporterViewController</string>
+		<key>EmailSendTo</key>
+		<string>info@tyreeapps.com</string>
+		<key>EmailSubject</key>
+		<string>A Citizen Reporter Upload</string>
+		<key>EmailBody</key>
+		<string>Body of the Email</string>
+	</dict>
+</dict>
+</plist>

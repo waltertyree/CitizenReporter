@@ -8,6 +8,12 @@ http://blog.tyreeapps.com/2010/01/citizen-reporter-plug-in-for-taplynx.html
 As with any programming project, we've gotten better so
 the code needs to be reworked every few months.
 
+Installation:
+1) Add the CitizenReporterViewController.h/.m/.sib files to your TapLynx project
+2) Update your NGConfig using the values of the sample.plist file as an example
+3) Modify the look and feel of the CitizenReporterViewController.xib in the Interface Builder as you want.
+
+As always, please submit feedback and suggestions to info@tyreeapps.com
+
 TODO:
-let people configure the plugin via the NGConfig.plst
 stub out posting data to a webpage rather than with email

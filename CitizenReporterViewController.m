@@ -88,32 +88,37 @@ Created by Walter Tyree, Jan 20 2010
 
 // Dismisses the email composition interface when users tap Cancel or Send. Proceeds to update the message field with the result of the operation.
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
-{	
-	// Write the result to the Log. This should all probably be cut out for deployment.
+{
+	NSString *alertMessage = nil;
+	// Notifies users about errors associated with the interface
 	switch (result)
 	{
 		case MFMailComposeResultCancelled:
-			NSLog(@"Result: canceled");
 			break;
 		case MFMailComposeResultSaved:
-			NSLog(@"Result: saved");
 			break;
 		case MFMailComposeResultSent:
-			NSLog(@"Result: sent");
+			alertMessage = NSLocalizedString(@"Your message has been sent.", nil);
 			break;
 		case MFMailComposeResultFailed:
-			NSLog(@"Result: failed");
+			alertMessage = NSLocalizedString(@"Your message could not be sent.", nil);
 			break;
 		default:
-			NSLog(@"Result: not sent");
+			alertMessage = NSLocalizedString(@"Your message could not be sent.", nil);
 			break;
 	}
-	//Down to here. The dismiss below is required for proper implementation
 	[self dismissModalViewControllerAnimated:YES];
+	if (alertMessage != nil) {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sending Email", nil) 
+														message:alertMessage 
+													   delegate:nil 
+											  cancelButtonTitle:NSLocalizedString(@"OK", nil)
+											  otherButtonTitles:nil,nil];
+		[alert show];
+		[alert release];
+	}
+	
 }
-
-
-
 #pragma mark Workaround for Mail.app Problems
 
 // Launches the Mail application on the device.

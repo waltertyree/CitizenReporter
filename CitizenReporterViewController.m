@@ -67,9 +67,14 @@ Created by Walter Tyree, Jan 20 2010
 	
 
 	// Set up recipients
-	NSArray *toRecipients = [NSArray arrayWithObject:sendTo]; 
-	
-	[picker setToRecipients:toRecipients];
+    // But only if the string is empty. Otherwise a blank To: get's created which messes up the system.
+    if (![sendTo isEqualToString:@""]) 
+    {
+       	NSArray *toRecipients = [NSArray arrayWithObject:sendTo]; 
+        
+        [picker setToRecipients:toRecipients]; 
+    }
+
 
 	
 	// Attach an image to the email
